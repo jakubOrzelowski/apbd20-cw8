@@ -164,7 +164,9 @@ namespace Exercise6
         /// </summary>
         public static IEnumerable<Emp> Task1()
         {
-            IEnumerable<Emp> result = null;
+            var methodSyntax = Emps.Where(e => e.Job.Equals("Backend programmer"));
+            
+            IEnumerable<Emp> result = methodSyntax;
             return result;
         }
 
@@ -173,7 +175,13 @@ namespace Exercise6
         /// </summary>
         public static IEnumerable<Emp> Task2()
         {
-            IEnumerable<Emp> result = null;
+            
+            var methodSyntax =
+                Emps
+                    .Where(e => e.Job.Equals("Frontend programmer") && e.Salary > 1000)
+                    .OrderByDescending(e => e.Ename);
+            
+            IEnumerable<Emp> result = methodSyntax;
             return result;
         }
 
